@@ -52,7 +52,7 @@ fun DriverListItem(
 
         // Display an icon next to the driver's information
         Icon(
-            imageVector = Icons.Default.Person, // Replace with the desired icon
+            imageVector = Icons.Default.Person,
             contentDescription = null,
             tint = MaterialTheme.colorScheme.secondary
         )
