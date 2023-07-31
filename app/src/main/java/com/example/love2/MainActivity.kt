@@ -33,9 +33,10 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = ScreenNav.DriverScreen.route) {
                         composable(ScreenNav.DriverScreen.route) { DriverScreen(navController = navController) }
-                        composable("${ScreenNav.RouteScreen.route}/{driverId}") { backStackEntry ->
-                            val driverId = backStackEntry.arguments?.getString("driverId")
-                            RouteDetailScreen(navController = navController, driverId = driverId?.toInt())
+                        composable("${ScreenNav.RouteScreen.route}/{driverId}/{driverName}") { backStackEntry ->
+                            val driverId = backStackEntry.arguments?.getString("driverId")?.toInt()
+                            val driverName = backStackEntry.arguments?.getString("driverName")
+                            RouteDetailScreen(navController = navController, driverId = driverId, driverName = driverName)
                         }
                     }
                 }

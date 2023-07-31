@@ -31,7 +31,7 @@ fun DriverScreen(
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(state.drivers?.filterNotNull() ?: listOf()) { driver ->
                 DriverListItem(driverItem = driver) { selectedDriver ->
-                    navController.navigate("${ScreenNav.RouteScreen.route}/${selectedDriver.id}")
+                    navController.navigate("${ScreenNav.RouteScreen.route}/${selectedDriver.id}/${selectedDriver.name}")
                 }
             }
         }
@@ -46,9 +46,7 @@ fun DriverScreen(
                     .align(Alignment.Center)
             )
         }
-//        if(state.isLoading) {
-//            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-//        }
+
     }
 
 
